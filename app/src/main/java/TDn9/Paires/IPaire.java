@@ -1,4 +1,4 @@
-package Paires;
+package TDn9.Paires;
 
 public interface IPaire<A,B> {
     A fst();

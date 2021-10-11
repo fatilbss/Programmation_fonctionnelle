@@ -1,4 +1,4 @@
-package Paires;
+package TDn9.Paires;
 
 public class Paire<A,B> implements IPaire<A,B> {
     private A _fst;
