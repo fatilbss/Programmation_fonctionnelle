@@ -1,8 +1,6 @@
 package TDn9.Arbresgeneriques;
 
-
-
-public class Noeud {
+public class Entier {
     private int nb;
-   
+    
 }

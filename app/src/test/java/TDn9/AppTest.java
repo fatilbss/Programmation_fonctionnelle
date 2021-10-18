@@ -109,4 +109,7 @@ public class AppTest {
         assertFalse(arbre3().estTrie());
     }
 
+
+
 }
+

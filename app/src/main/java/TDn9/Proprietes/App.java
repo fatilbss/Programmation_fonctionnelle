@@ -4,6 +4,11 @@
 package TDn9.Proprietes;
 import TDn9.Paires.IPaire;
 import TDn9.Paires.Paire; 
+import TDn9.Arbresgeneriques.*;
+
+import java.util.List;
+import static org.junit.Assert.*;
+
 
 public class App {
     public static void exo2q2() {
@@ -14,4 +19,19 @@ public class App {
         IPaire<Double, IPaire<Integer, String>> p3 = p2.changeSnd(p1);
         System.out.println(p3);
     }
+
+    public static void testAbreEntier() {
+        final TDn9.Arbresgeneriques.Arbre<Entier> v1 = new TDn9.Arbresgeneriques.Feuille<>(new Entier(1));
+        final TDn9.Arbresgeneriques.Arbre<Entier> v2 = new TDn9.Arbresgeneriques.Feuille<>(new Entier(2));
+        final TDn9.Arbresgeneriques.Arbre<Entier> n1 = new TDn9.Arbresgeneriques.Noeud<>(List.of(v1,v2));
+        final TDn9.Arbresgeneriques.Arbre<Entier> v3 = new TDn9.Arbresgeneriques.Feuille<>(new Entier(3));
+        final TDn9.Arbresgeneriques.Arbre<Entier> root = new TDn9.Arbresgeneriques.Noeud<>(List.of(v2,n1));
+        assertEquals(0, arbre0().taille());
+
+
+    
+    
+        }
 }
+
+
