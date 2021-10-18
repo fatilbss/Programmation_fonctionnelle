@@ -123,18 +123,34 @@ public class AppTest {
     }
 
     @Test
-    public void testArbreEntier() {
+    public void testTailleArbre() {
         TDn9.Arbresgeneriques.Arbre<Entier> v1 = new TDn9.Arbresgeneriques.Feuille<>(new Entier(1));
         TDn9.Arbresgeneriques.Arbre<Entier> v2 = new TDn9.Arbresgeneriques.Feuille<>(new Entier(2));
         TDn9.Arbresgeneriques.Arbre<Entier> n1 = new TDn9.Arbresgeneriques.Noeud<>(List.of(v1,v2));
         TDn9.Arbresgeneriques.Arbre<Entier> v3 = new TDn9.Arbresgeneriques.Feuille<>(new Entier(3));
         TDn9.Arbresgeneriques.Arbre<Entier> root = new TDn9.Arbresgeneriques.Noeud<>(List.of(v2,n1));
         assertEquals(root.taille(),3);
-
-
-
-
     }
+
+    @Test
+    public void testContientArbre() {
+        TDn9.Arbresgeneriques.Arbre<Entier> v1 = new TDn9.Arbresgeneriques.Feuille<>(new Entier(1));
+        TDn9.Arbresgeneriques.Arbre<Entier> v2 = new TDn9.Arbresgeneriques.Feuille<>(new Entier(2));
+        TDn9.Arbresgeneriques.Arbre<Entier> n1 = new TDn9.Arbresgeneriques.Noeud<>(List.of(v1,v2));
+        TDn9.Arbresgeneriques.Arbre<Entier> v3 = new TDn9.Arbresgeneriques.Feuille<>(new Entier(3));
+        TDn9.Arbresgeneriques.Arbre<Entier> root = new TDn9.Arbresgeneriques.Noeud<>(List.of(v2,n1));
+        assertEquals(root.contient(),true);
+    }
+
+    @Test
+    public void testValeursArbre() {
+        Entier x = new Entier(1);
+        Entier y = new Entier(2);
+        Set<Entier> test = Set.of(x,y);
+        TDn9.Arbresgeneriques.Arbre<Entier> root = new TDn9.Arbresgeneriques.Noeud<>(List.of(x,y));
+        assertEquals(root.valeurs(),test);
+    }
+
 
 
 }
