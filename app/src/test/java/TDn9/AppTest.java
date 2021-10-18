@@ -5,6 +5,9 @@ package TDn9;
 
 
 
+import TDn9.Arbresgeneriques.Entier;
+import TDn9.Paires.IPaire;
+import TDn9.Paires.Paire;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -16,11 +19,11 @@ import TDn9.Arbres.*;
 
 public class AppTest {
 
-    public static final Arbre arbre0() {
+    public final Arbre arbre0() {
         return new Noeud(new ArrayList<Arbre>());
     }
 
-    public static final Arbre arbre1() {
+    public final Arbre arbre1() {
         final Arbre f1 = new Feuille(1);
         final Arbre f2 = new Feuille(2);
         final Arbre n1 = new Noeud(List.of(f1,f2));
@@ -29,7 +32,7 @@ public class AppTest {
         return n2;
     }
 
-    public static final Arbre arbre2() {
+    public final Arbre arbre2() {
         final Arbre f1 = new Feuille(2);
         final Arbre f2 = new Feuille(3);
         final Arbre n1 = new Noeud(List.of(f1,f2));
@@ -38,7 +41,7 @@ public class AppTest {
         return n2;
     }
 
-    public static final Arbre arbre3() {
+    public final Arbre arbre3() {
         final Arbre f1 = new Feuille(2);
         final Arbre f2 = new Feuille(1);
         final Arbre n1 = new Noeud(List.of(f1,f2));
@@ -109,6 +112,29 @@ public class AppTest {
         assertFalse(arbre3().estTrie());
     }
 
+    @Test
+    public void exo2q2() {
+        IPaire<Integer, String> p1 = new Paire<>(1, "un");
+        System.out.println(p1);
+        IPaire<Double, String> p2 = p1.changeFst(1.0);
+        System.out.println(p2);
+        IPaire<Double, IPaire<Integer, String>> p3 = p2.changeSnd(p1);
+        System.out.println(p3);
+    }
+
+    @Test
+    public void testArbreEntier() {
+        TDn9.Arbresgeneriques.Arbre<Entier> v1 = new TDn9.Arbresgeneriques.Feuille<>(new Entier(1));
+        TDn9.Arbresgeneriques.Arbre<Entier> v2 = new TDn9.Arbresgeneriques.Feuille<>(new Entier(2));
+        TDn9.Arbresgeneriques.Arbre<Entier> n1 = new TDn9.Arbresgeneriques.Noeud<>(List.of(v1,v2));
+        TDn9.Arbresgeneriques.Arbre<Entier> v3 = new TDn9.Arbresgeneriques.Feuille<>(new Entier(3));
+        TDn9.Arbresgeneriques.Arbre<Entier> root = new TDn9.Arbresgeneriques.Noeud<>(List.of(v2,n1));
+        assertEquals(root.taille(),3);
+
+
+
+
+    }
 
 
 }

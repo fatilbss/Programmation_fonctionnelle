@@ -24,5 +24,5 @@ public class Feuille<T> implements Arbre<T> {
     public Set<T> valeurs() {
         return Set.of(valeur);
     }
-    
+
 }
