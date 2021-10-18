@@ -1,8 +1,7 @@
 package TDn9.Arbresgeneriques;
 
-public interface Sommable {
-        T sommer(final T autre);
-        T zero();
+public interface Sommable <T>{
+        T sommer( T autre);
 }
 
 // définir une interface Sommable caractérisant les objets pouvant être sommés : ils ont

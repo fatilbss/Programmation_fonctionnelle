@@ -139,7 +139,7 @@ public class AppTest {
         TDn9.Arbresgeneriques.Arbre<Entier> n1 = new TDn9.Arbresgeneriques.Noeud<>(List.of(v1,v2));
         TDn9.Arbresgeneriques.Arbre<Entier> v3 = new TDn9.Arbresgeneriques.Feuille<>(new Entier(3));
         TDn9.Arbresgeneriques.Arbre<Entier> root = new TDn9.Arbresgeneriques.Noeud<>(List.of(v2,n1));
-        assertEquals(root.contient(),true);
+        assertEquals(root.contient(v1),true);
     }
 
     @Test
