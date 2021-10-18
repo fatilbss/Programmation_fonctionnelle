@@ -25,4 +25,25 @@ public class Feuille<T> implements Arbre<T> {
         return Set.of(valeur);
     }
 
+    @Override
+    public T somme() {
+        return valeur;
+    }
+
+    @Override
+    public T min() {
+        return valeur;
+    }
+
+    @Override
+    public T max() {
+        return valeur;
+    }
+
+    @Override
+    public boolean estTrie() {
+        return true;
+    }
+
+
 }
