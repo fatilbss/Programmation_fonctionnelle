@@ -3,6 +3,7 @@
  */
 package TD2;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
@@ -92,16 +93,51 @@ public class App {
         Predicate<Double> tropLourd = poids -> poids > 150.0;
         Predicate<Double> poidCorrecte = tropLourd.negate();
         //acces autorise
-        Predicate<Paire<Integer,Double>> test = e -> e.fst() <100;
+        Predicate<Paire<Integer,Double>> accesAutorise = e -> tailleCorrecte.test(e.fst) && poidCorrecte.test(e.snd);
+
 
 
     }
 
-    public void question2_2(){
-        //static void foo() {}
-        // Static <T> Predicate <T> pg (List<Predicat<T>> preds) {}
-        //pg = l -> {}
-        //function <list<P<T>> avant la fleche, P<T>> apres la fleche
+    //Question 2
+
+    public static <T> List<T> filtragePredicatif(List<Predicate<T>> preds, List<T> els) {
+        List<T> rtr = new ArrayList<>();
+        Predicate<T> pred = x -> true;
+        for (Predicate<T> ps :preds ) {
+            pred = pred.and(ps);
+        }
+        for (T e : els) {
+            if(pred.test(e)) {
+                rtr.add(e);
+            }
+        }
+        return rtr;
     }
+         /*
+
+ Notes du prof
+            static void foo() {}
+
+         public static <T> List <T> filtragePredicatif (List<T> preds, List<T> els) {
+         P<T> global = App.f (ps);
+         List <T> rtr = new ArrayList<>();
+         for (T e : els){
+         if(global.test(e)){
+         rtr.add(e);
+         }
+         }
+         return rtr;
+         }
+/*
+         Bifunction<List <P<T>>, List<T>, List<T>> g = (ps,es) -> ....
+
+
+         ou <T> List <T> g ( List <P<T>> ps, List <T> es) {}
+        pg = l -> {}
+        function <list<P<T>> avant la fleche, P<T>> apres la fleche
+
+         */
+
 
 }
