@@ -31,7 +31,41 @@ public class App {
         System.out.println(sommeString.somme("1", "2"));
     }
 
+    //Question 2
+    public static void question1_2() {
+        final List<String> list1 = List.of("Peanut", "Butter","Nutella");
+        final Map<String, Integer> map1 = Map.of("Carotte", 5, "Peche", 12, "Pomme", 7);
+        ToString<List<String>> l2s = l -> {
+            StringBuffer rtr = new StringBuffer();
+            boolean premier = true;
+            for (String e : l) {
+                if (!premier)
+                    rtr.append(", ");
+                else
+                    premier = false;
+                rtr.append(e);
+            }
+            return rtr.toString();
+        };
 
+        ToString<Map<String, Integer>> m2s = m -> {
+            final StringBuffer rtr = new StringBuffer();
+            boolean premier = true;
+            for (final Map.Entry<String, Integer> e : m.entrySet()) {
+                if (!premier)
+                    rtr.append(", ");
+                else
+                    premier = false;
+                rtr.append(String.format("%s: %d", e.getKey(), e.getValue()));
+            }
+            return rtr.toString();
+        };
+
+        System.out.println(l2s.convert(list1));
+        System.out.println(m2s.convert(map1));
+    }
+
+    //Question 3
 
 
 }
