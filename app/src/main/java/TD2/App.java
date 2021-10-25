@@ -32,7 +32,7 @@ public class App {
     }
 
     //Question 2
-    public static void question1_2() {
+    public void question1_2() {
         final List<String> list1 = List.of("Peanut", "Butter","Nutella");
         final Map<String, Integer> map1 = Map.of("Carotte", 5, "Peche", 12, "Pomme", 7);
         ToString<List<String>> l2s = l -> {
@@ -65,7 +65,23 @@ public class App {
         System.out.println(m2s.convert(map1));
     }
 
-    //Question 3
+    /* Question 3
+    Le modele Function prend un argument de type T (générique) puis retourne une valeur.
+    Elle convertit un type vers un autre type.
+
+    Le modele Predicate prend un argument de type T (générique) puis retourne une valeur de type boolean.
+    Selon un critère, elle teste l'argument puis renvoie si c'estvrai ou faux.
+
+    Le modele Consumer prend un argument de type (générique) mais ne retourne pas de valeur.
+    Il accecpte une entrée sans rien retourner.
+
+    Le modele Supplier ne prend pas d'argument mais retourne une valeur de type T (générique).
+    Elle génère une sortie.
+    */
+
+
+
+    //Exercice 2
 
 
 }
