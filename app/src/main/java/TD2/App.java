@@ -3,12 +3,35 @@
  */
 package TD2;
 
+import java.util.List;
+import java.util.Map;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
     }
+    //Exercice 1
+    //Question 1
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public void question1() {
+        //somme 2 entiers
+        Somme<Integer> sommeInteger = (x, y) -> x + y;
+        System.out.println(sommeInteger.somme(1, 2));
+
+        //Somme 2 doubles
+        Somme<Double> sommeDouble = (x, y) -> x + y;
+        System.out.println(sommeDouble.somme(1.0, 2.0));
+
+        //Somme 2 longs
+        Somme<Long> sommeLong = (x, y) -> x + y;
+        System.out.println(sommeLong.somme(1L, 2L));
+
+        //somme 2 strings
+        Somme<String> sommeString = (x, y) -> x + y;
+        System.out.println(sommeString.somme("1", "2"));
     }
+
+
+
+
 }
