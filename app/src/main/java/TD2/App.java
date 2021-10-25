@@ -5,6 +5,8 @@ package TD2;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
+import TD2.Paire;
 
 public class App {
     public String getGreeting() {
@@ -32,7 +34,7 @@ public class App {
     }
 
     //Question 2
-    public void question1_2() {
+    public void question2() {
         final List<String> list1 = List.of("Peanut", "Butter","Nutella");
         final Map<String, Integer> map1 = Map.of("Carotte", 5, "Peche", 12, "Pomme", 7);
         ToString<List<String>> l2s = l -> {
@@ -82,6 +84,24 @@ public class App {
 
 
     //Exercice 2
+    public void question1_2() {
+        Predicate<Integer> tropPetit = taille -> taille <100;
+        Predicate<Integer> tropGrand = taille -> taille >200;
+        Predicate<Integer> tailleIncorrecte = tropPetit.or(tropGrand);
+        Predicate<Integer> tailleCorrecte = tailleIncorrecte.negate();
+        Predicate<Double> tropLourd = poids -> poids > 150.0;
+        Predicate<Double> poidCorrecte = tropLourd.negate();
+        //acces autorise
+        Predicate<Paire<Integer,Double>> test = e -> e.fst() <100;
 
+
+    }
+
+    public void question2_2(){
+        //static void foo() {}
+        // Static <T> Predicate <T> pg (List<Predicat<T>> preds) {}
+        //pg = l -> {}
+        //function <list<P<T>> avant la fleche, P<T>> apres la fleche
+    }
 
 }
